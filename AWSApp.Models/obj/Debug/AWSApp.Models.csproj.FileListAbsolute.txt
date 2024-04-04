@@ -1,0 +1,12 @@
+D:\Prahlad\vs2022\AWS\AWSApp.Models\bin\Debug\AWSApp.Models.dll
+D:\Prahlad\vs2022\AWS\AWSApp.Models\bin\Debug\AWSApp.Models.pdb
+D:\Prahlad\vs2022\AWS\AWSApp.Models\obj\Debug\AWSApp.Models.csproj.AssemblyReference.cache
+D:\Prahlad\vs2022\AWS\AWSApp.Models\obj\Debug\AWSApp.Models.csproj.CoreCompileInputs.cache
+D:\Prahlad\vs2022\AWS\AWSApp.Models\obj\Debug\AWSApp.Models.dll
+D:\Prahlad\vs2022\AWS\AWSApp.Models\obj\Debug\AWSApp.Models.pdb
+D:\Prahlad\vs2022\AWS\AWSAPP\AWSApp.Models\bin\Debug\AWSApp.Models.dll
+D:\Prahlad\vs2022\AWS\AWSAPP\AWSApp.Models\bin\Debug\AWSApp.Models.pdb
+D:\Prahlad\vs2022\AWS\AWSAPP\AWSApp.Models\obj\Debug\AWSApp.Models.csproj.AssemblyReference.cache
+D:\Prahlad\vs2022\AWS\AWSAPP\AWSApp.Models\obj\Debug\AWSApp.Models.csproj.CoreCompileInputs.cache
+D:\Prahlad\vs2022\AWS\AWSAPP\AWSApp.Models\obj\Debug\AWSApp.Models.dll
+D:\Prahlad\vs2022\AWS\AWSAPP\AWSApp.Models\obj\Debug\AWSApp.Models.pdb

@@ -1,0 +1,225 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp\\AWSApp.csproj": {}
+  },
+  "projects": {
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj",
+        "projectName": "AWSApp.Application.Logic",
+        "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Data\\AWSApp.Data.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Data\\AWSApp.Data.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application\\AWSApp.Application.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application\\AWSApp.Application.csproj",
+        "projectName": "AWSApp.Application",
+        "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application\\AWSApp.Application.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj",
+        "projectName": "AWSApp.Common",
+        "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Data\\AWSApp.Data.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Data\\AWSApp.Data.csproj",
+        "projectName": "AWSApp.Data",
+        "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Data\\AWSApp.Data.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Infrastructure.IoC\\AWSApp.Infrastructure.IoC.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Infrastructure.IoC\\AWSApp.Infrastructure.IoC.csproj",
+        "projectName": "AWSApp.Infrastructure.IoC",
+        "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Infrastructure.IoC\\AWSApp.Infrastructure.IoC.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application\\AWSApp.Application.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application\\AWSApp.Application.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Data\\AWSApp.Data.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Data\\AWSApp.Data.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj",
+        "projectName": "AWSApp.Models",
+        "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Models\\AWSApp.Models.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp\\AWSApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp\\AWSApp.csproj",
+        "projectName": "AWSApp",
+        "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp\\AWSApp.csproj",
+        "packagesPath": "C:\\Users\\omninet127\\.nuget\\packages\\",
+        "outputPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\omninet127\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application.Logic\\AWSApp.Application.Logic.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application\\AWSApp.Application.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Application\\AWSApp.Application.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Common\\AWSApp.Common.csproj"
+              },
+              "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Infrastructure.IoC\\AWSApp.Infrastructure.IoC.csproj": {
+                "projectPath": "D:\\Prahlad\\vs2022\\AWS\\AWSApp\\AWSApp.Infrastructure.IoC\\AWSApp.Infrastructure.IoC.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
