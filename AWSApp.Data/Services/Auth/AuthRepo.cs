@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AWSApp.Data.Services.Auth
 {
-    internal class AuthRepo:IAuthRepo
+    public class AuthRepo:IAuthRepo
     {
         private IDapperDb _dapperDb { get; set; }
         public AuthRepo(IDapperDb dapperDb)
@@ -20,10 +20,26 @@ namespace AWSApp.Data.Services.Auth
         public Users getUserDetails(Users user)
         {
             DynamicParameters dynamicParameters = new DynamicParameters();
-            dynamicParameters.Add("@username", user.username);
-            dynamicParameters.Add("@password", user.password);
+            dynamicParameters.Add("@username", user.UserId);
+            dynamicParameters.Add("@password", user.Password);
             dynamicParameters.Add("@Flag", "InvestorLogin");
             return _dapperDb.ExecuteGet<Users>("pro_IncentiveLogin", dynamicParameters);
+        }
+
+        public List<Users> LoginCheck(string username)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("@userid", username);
+            var lst= _dapperDb.GetAll<Users>("LoginCheck", dynamicParameters);
+            return lst;
+        }
+        public UserManager LoginAllow(string username)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("@userid", username);
+            dynamicParameters.Add("@status", 1);
+            var lst = _dapperDb.ExecuteGet<UserManager>("LoginAllow", dynamicParameters);
+            return lst;
         }
     }
 }

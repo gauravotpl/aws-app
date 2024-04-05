@@ -10,5 +10,9 @@ namespace AWSApp.Data.Interfaces.Auth
     public interface IAuthRepo
     {
         Users getUserDetails(Users user);
+        List<Users> LoginCheck(string username);
+
+        UserManager LoginAllow(string username);
+
     }
 }

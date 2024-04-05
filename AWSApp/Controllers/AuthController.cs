@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AWSApp.Application.Logic.Interfaces.Auth;
+using AWSApp.Common.Models;
+using AWSApp.Models.Auth;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AWSApp.Controllers
@@ -7,10 +10,18 @@ namespace AWSApp.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+
+        private IUserService _userService;
+        public AuthController(IUserService userService)
         {
-            return "test";
+
+            _userService = userService;
+        }
+
+        [HttpPost("Login")]
+        public JsonModel Loign(LoginRequest login)
+        {
+            return _userService.Login(login);
         }
     }
 }

@@ -3,7 +3,6 @@ using AWSApp.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -67,7 +66,6 @@ namespace AWSApp.Data.Services
         {
             using (IDbConnection con = GetDbConnection(connectionName))
             {
-                //con.Open();
                 return con.Query<T>(sp, dynamicParameters, commandType: commandType, commandTimeout: commandTimeout).ToList();
             }
         }
@@ -112,7 +110,7 @@ namespace AWSApp.Data.Services
             string connectionString = null;
             if (_connectionDict.TryGetValue(connectionName, out connectionString))
             {
-                return new SqlConnection(connectionString);
+                return new System.Data.SqlClient.SqlConnection(connectionString);
             }
 
             throw new ArgumentNullException();
@@ -135,6 +133,6 @@ namespace AWSApp.Data.Services
             }
         }
 
-       
+        
     }
 }

@@ -11,6 +11,8 @@ namespace AWSApp.Application.Logic.Interfaces.Auth
     public interface IUserService
     {
         JsonModel GetLoginDetails(Users user);
-       
+        JsonModel Login(LoginRequest login);
+
+
     }
 }

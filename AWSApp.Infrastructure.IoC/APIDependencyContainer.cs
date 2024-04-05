@@ -6,7 +6,9 @@ using AWSApp.Common.Interfaces;
 using AWSApp.Common.Services;
 using AWSApp.Data.DBContext;
 using AWSApp.Data.Interfaces;
+using AWSApp.Data.Interfaces.Auth;
 using AWSApp.Data.Services;
+using AWSApp.Data.Services.Auth;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,19 +46,20 @@ namespace AWSApp.Infrastructure.IoC
 
 
 
-            services.AddSingleton(new ConnectionString(configuration.GetConnectionString("FSDADBConnection")));
+            services.AddSingleton(new ConnectionString(configuration.GetConnectionString("DefaultConnection")));
 
 
             var connectionDict = new Dictionary<DatabaseConnectionName, string>
             {
-                { DatabaseConnectionName.SWMasterApp, configuration.GetConnectionString("FSDADBConnection")   },
+                { DatabaseConnectionName.SWMasterApp, configuration.GetConnectionString("DefaultConnection")   },
             };
 
 
             services.AddSingleton<IDictionary<DatabaseConnectionName, string>>(connectionDict);
 
-
+            services.AddScoped<IAuthRepo, AuthRepo>();
             services.AddScoped<IDapperDb, DapperDb>();
+            
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IJwtToken, JwtToken>();

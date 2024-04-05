@@ -1,4 +1,5 @@
 ﻿using AWSApp.Common.Models;
+using AWSApp.Models.Auth;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,9 @@ namespace AWSApp.Common.Interfaces
 {
     public interface IJwtToken
     {
-         string GenerateToken(JwtModel user);
-         JwtModel GetTokenDetails(HttpContext cntx);
+         string GenerateToken(UserManager user);
+        UserManager GetTokenDetails(HttpContext cntx);
 
-         JsonModel ExecuteToken(JsonModel contect, HttpContext cntx);
+         JsonModel ExecuteToken(UserManager contect, HttpContext cntx);
     }
 }

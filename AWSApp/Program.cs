@@ -1,3 +1,5 @@
+using AWSApp.Infrastructure.IoC;
+
 namespace AWSApp
 {
     public class Program
@@ -5,6 +7,7 @@ namespace AWSApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -12,7 +15,7 @@ namespace AWSApp
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "AWS API", Version = "v1" });
             });
-
+            RegisterServices(builder.Services, builder.Configuration);
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -40,6 +43,10 @@ namespace AWSApp
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+        }
+        private static void RegisterServices(IServiceCollection services, IConfiguration configuration)
+        {
+            APIDependencyContainer.RegisterServices(services, configuration);
         }
     }
 }

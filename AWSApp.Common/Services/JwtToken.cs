@@ -1,5 +1,6 @@
 ﻿using AWSApp.Common.Interfaces;
 using AWSApp.Common.Models;
+using AWSApp.Models.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -22,7 +23,7 @@ namespace AWSApp.Common.Services
             _config = config;
         }
 
-        public string GenerateToken(JwtModel user)
+        public string GenerateToken(UserManager user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:SecretKey"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -34,16 +35,35 @@ namespace AWSApp.Common.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("Username", user.Username.ToString()),
-                    new Claim("Password", user.Password.ToString()),
-                    new Claim("Mobile", user.Mobile.ToString()),
-                    new Claim("EmailId", user.EmailId.ToString()),
-                    new Claim("FirstName", user.FirstName.ToString()),
-                    new Claim("LastName", user.LastName.ToString()),
-                    new Claim("DOB", user.DOB.ToString()==null?"":user.DOB.ToString()),
-                    new Claim("Address", user.Address.ToString()==null?"":user.Address.ToString()),
-                    new Claim("StateId", user.Address.ToString()==null?"":user.StateId.ToString()),
-                    new Claim("DistrictId", user.Address.ToString()==null?"":user.DistrictId.ToString()),
+                    new Claim("userid", user.userid.ToString()),
+                    new Claim("Password", user.PASSWORD.ToString()),
+                    new Claim("TokenPage", user.TokenPage.ToString()),
+                    new Claim("AreaName", user.AreaName.ToString()),
+                    new Claim("dist_Eng", user.dist_Eng.ToString()),
+                    new Claim("dist_Hindi", user.dist_Hindi.ToString()),
+                    new Claim("ApiUrl", user.ApiUrl.ToString()==null?"":user.ApiUrl.ToString()),
+                    new Claim("houseid", user.houseid.ToString() == null ? "" : user.houseid.ToString()),
+                    new Claim("cccd", user.cccd.ToString()==null?"":user.cccd.ToString()),
+                    new Claim("Opername", user.Opername.ToString()==null?"":user.Opername.ToString()),
+                    new Claim("id", user.id.ToString()==null?"":user.id.ToString()),
+                    new Claim("mobileno", user.mobileno.ToString()==null?"":user.mobileno.ToString()),
+                    new Claim("email", user.email.ToString()==null?"":user.email.ToString()),
+                    new Claim("USER_TYPE", user.USER_TYPE.ToString()==null?"":user.USER_TYPE.ToString()),
+                    new Claim("crdate", user.crdate.ToString()==null?"":user.crdate.ToString()),
+                    new Claim("useronoff", user.useronoff.ToString()==null?"":user.useronoff.ToString()),
+                    new Claim("loginattempt", user.loginattempt.ToString()==null?"":user.loginattempt.ToString()),
+                    new Claim("photo", user.photo.ToString()==null?"":user.photo.ToString()),
+                    new Claim("ccnm", user.ccnm.ToString()==null?"":user.ccnm.ToString()),
+                    new Claim("Distcode", user.Distcode.ToString()==null?"":user.Distcode.ToString()),
+                    new Claim("AreaType", user.AreaType.ToString()==null?"":user.AreaType.ToString()),
+                    new Claim("Dashname", user.Dashname.ToString()==null?"":user.Dashname.ToString()),
+                    new Claim("LjsId", user.LjsId.ToString()==null?"":user.LjsId.ToString()),
+                    new Claim("EE", user.EE.ToString()==null?"":user.EE.ToString()),
+                    new Claim("EE_English", user.EE_English.ToString()==null?"":user.EE_English.ToString()),
+                    new Claim("EE_Hindi", user.EE_Hindi.ToString()==null?"":user.EE_Hindi.ToString()),
+                    new Claim("EmpCode", user.EmpCode.ToString()==null?"":user.EmpCode.ToString()),
+                    new Claim("Oldcase", user.Oldcase.ToString()==null?"":user.Oldcase.ToString()),
+                    new Claim("RevTrackng", user.RevTrackng.ToString()==null?"":user.RevTrackng.ToString())
                 }),
                 Expires = DateTime.Now.AddMinutes(30),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -52,25 +72,25 @@ namespace AWSApp.Common.Services
             return tokenHandler.WriteToken(token);
         }
 
-        public JwtModel GetTokenDetails(HttpContext cntx)
+        public UserManager GetTokenDetails(HttpContext cntx)
         {
             IEnumerable<Claim> claims = cntx.User.Claims;
 
-            return new JwtModel()
+            return new UserManager()
             {
-                Username = claims.FirstOrDefault(x => x.Type == "Username").Value,
-                Mobile = claims.FirstOrDefault(x => x.Type == "Mobile").Value,
-                EmailId = claims.FirstOrDefault(x => x.Type == "EmailId").Value,
-                FirstName = claims.FirstOrDefault(x => x.Type == "FirstName").Value,
-                LastName = claims.FirstOrDefault(x => x.Type == "LastName").Value,
-                Address = claims.FirstOrDefault(x => x.Type == "Address").Value,
-                DOB = claims.FirstOrDefault(x => x.Type == "DOB").Value,
-                StateId = claims.FirstOrDefault(x => x.Type == "StateId").Value,
-                DistrictId = claims.FirstOrDefault(x => x.Type == "DistrictId").Value,
+                userid = claims.FirstOrDefault(x => x.Type == "userid").Value,
+                PASSWORD = claims.FirstOrDefault(x => x.Type == "Password").Value,
+                TokenPage = claims.FirstOrDefault(x => x.Type == "TokenPage").Value,
+                AreaName = claims.FirstOrDefault(x => x.Type == "AreaName").Value,
+                dist_Eng = claims.FirstOrDefault(x => x.Type == "dist_Eng").Value,
+                dist_Hindi = claims.FirstOrDefault(x => x.Type == "dist_Hindi").Value,
+                ApiUrl = claims.FirstOrDefault(x => x.Type == "ApiUrl").Value,
+                houseid = claims.FirstOrDefault(x => x.Type == "houseid").Value,
+                
             };
         }
 
-        public JsonModel ExecuteToken(JsonModel content, HttpContext cntx)
+        public JsonModel ExecuteToken(UserManager content, HttpContext cntx)
         {
 
             var token = cntx.Request.Headers["Authorization"].ToString();
@@ -89,10 +109,10 @@ namespace AWSApp.Common.Services
                 }, out SecurityToken validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
-                var userId = jwtToken.Claims.First(x => x.Type == "Username").Value;
+                var userId = jwtToken.Claims.First(x => x.Type == "userid").Value;
 
                 // return user id from JWT token if validation successful
-                return content;
+                return new JsonModel() { data=content,httpStatusCode=System.Net.HttpStatusCode.OK,message="Success"};
             }
             catch
             {
