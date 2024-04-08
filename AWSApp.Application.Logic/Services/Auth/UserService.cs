@@ -64,7 +64,7 @@ namespace AWSApp.Application.Logic.Services.Auth
                             {
                                 data = userDetails,
                                 message = "User Details Not Found.",
-                                httpStatusCode = System.Net.HttpStatusCode.NotFound,
+                                httpStatusCode = System.Net.HttpStatusCode.NoContent,
                                 accessToken = null
                             };
                         }
@@ -75,7 +75,7 @@ namespace AWSApp.Application.Logic.Services.Auth
                     {
                         data = new object(),
                         message = "Invalid Password",
-                        httpStatusCode = System.Net.HttpStatusCode.NotFound
+                        httpStatusCode = System.Net.HttpStatusCode.Unauthorized
                     };
                 }
             }
@@ -85,7 +85,7 @@ namespace AWSApp.Application.Logic.Services.Auth
                 {
                     data = new object(),
                     message = "User Details Not Found.",
-                    httpStatusCode = System.Net.HttpStatusCode.NotFound,
+                    httpStatusCode = System.Net.HttpStatusCode.NoContent,
                     accessToken = null
                 };
             }
